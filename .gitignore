@@ -1,0 +1,43 @@
+# Dependencies
+/frontend/node_modules/
+/backend/env/
+
+/frontend/*/.pnp
+/frontend/.pnp.*
+/frontend/.yarn/*
+!/frontend/.yarn/patches
+!/frontend/.yarn/plugins
+!/frontend/.yarn/releases
+!/frontend/.yarn/versions
+
+# Testing
+/frontend/coverage/
+
+# Next.js
+/frontend/.next/
+/frontend/out/
+
+# Production build (if used)
+/frontend/build/
+
+# Misc
+/frontend/.DS_Store
+/frontend/*.pem
+
+# Debug logs
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+/frontend/.pnpm-debug.log*
+
+# Env files (opt-in to commit if needed)
+/frontend/.env*
+/backend/.env*
+/backend/env/
+
+# Deployment
+/frontend/.vercel/
+
+# TypeScript
+/frontend/*.tsbuildinfo
+/frontend/next-env.d.ts
