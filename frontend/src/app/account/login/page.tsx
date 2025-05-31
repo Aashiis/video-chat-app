@@ -81,7 +81,7 @@ export default function LoginPage() {
       const { token } = data;
       if (token) {
         localStorage.setItem('token', token);
-        window.location.href = '/account/profile/';
+        window.location.href = '/';
       }
     } catch (err: any) {
       setError(err.message || 'An unknown error occurred.');
@@ -118,7 +118,7 @@ export default function LoginPage() {
             {/* Email Field */}
             <div>
                 <label htmlFor="email" className="block text-sm font-medium text-purple-200 mb-1">
-                Email or Username
+                Email
                 </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-purple-300">

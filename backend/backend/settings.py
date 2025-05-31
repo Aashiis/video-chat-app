@@ -21,6 +21,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'channels',
+    'daphne',  # For WebSocket support
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -33,7 +36,8 @@ INSTALLED_APPS = [
     'corsheaders',  # For handling CORS
     
     # My apps
-    'accounts',
+    'accounts', 
+    'chat',
 ]
 
 AUTH_USER_MODEL = 'accounts.User' # Telling Django to use our custom user model
@@ -83,9 +87,21 @@ TEMPLATES = [
             ],
         },
     },
-]
+] 
 
 WSGI_APPLICATION = 'backend.wsgi.application'
+# ASGI application for Channels
+ASGI_APPLICATION = 'backend.asgi.application'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer',
+        # 'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        # 'CONFIG': {
+        #     "hosts": [("127.0.0.1", 6379)],  # Redis server address
+        # },
+    }
+}
 
 
 # Database

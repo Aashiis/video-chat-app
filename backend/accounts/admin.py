@@ -3,8 +3,6 @@ from django.contrib import admin
 from accounts.models import CallSession, User
 
 # Register your models here.
-from django.contrib import admin
-from .models import User
 
 @admin.register(User)  # Decorator syntax alternative
 class UserAdmin(admin.ModelAdmin):

@@ -68,9 +68,6 @@ class UserProfileView(generics.RetrieveAPIView):
     permission_classes = [permissions.IsAuthenticated]
     def get_object(self):
         return self.request.user
-    def get(self, request, *args, **kwargs):
-        serializer = self.get_serializer(request.user)
-        return Response(serializer.data, status=status.HTTP_200_OK)
     
 class CallSessionView(generics.ListCreateAPIView):
     serializer_class = CallSessionSerializer
